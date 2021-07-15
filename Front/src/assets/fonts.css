@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('~@/assets/fonts/CenturyGothic.eot');
+  src: local('Century Gothic'), local('CenturyGothic'), 
+       url('~@/assets/fonts/CenturyGothic.eot?#iefix') format('embedded-opentype'),
+       url('~@/assets/fonts/CenturyGothic.svg#CenturyGothic') format('svg'),
+       url('~@/assets/fonts/CenturyGothic.ttf') format('truetype'),
+       url('~@/assets/fonts/CenturyGothic.woff') format('woff'),
+       url('~@/assets/fonts/CenturyGothic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('~@/assets/fonts/CenturyGothic-Bold.eot');
+  src: local('Century Gothic Bold'), local('CenturyGothic-Bold'),
+       url('~@/assets/fonts/CenturyGothic-Bold.eot?#iefix') format('embedded-opentype'),
+       url('~@/assets/fonts/CenturyGothic-Bold.svg#CenturyGothic-Bold') format('svg'),
+       url('~@/assets/fonts/CenturyGothic-Bold.ttf') format('truetype'),
+       url('~@/assets/fonts/CenturyGothic-Bold.woff') format('woff'),
+       url('~@/assets/fonts/CenturyGothic-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('~@/assets/fonts/CenturyGothic-Italic.eot');
+  src: local('Century Gothic Italic'), local('CenturyGothic-Italic'),
+       url('~@/assets/fonts/CenturyGothic-Italic.eot?#iefix') format('embedded-opentype'),
+       url('~@/assets/fonts/CenturyGothic-Italic.svg#CenturyGothic-Italic') format('svg'),
+       url('~@/assets/fonts/CenturyGothic-Italic.ttf') format('truetype'),
+       url('~@/assets/fonts/CenturyGothic-Italic.woff') format('woff'),
+       url('~@/assets/fonts/CenturyGothic-Italic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('~@/assets/fonts/CenturyGothic-BoldItalic.eot');
+  src: local('Century Gothic Bold Italic'), local('CenturyGothic-BoldItalic'),
+       url('~@/assets/fonts/CenturyGothic-BoldItalic.eot?#iefix') format('embedded-opentype'),
+       url('~@/assets/fonts/CenturyGothic-BoldItalic.svg#CenturyGothic-BoldItalic') format('svg'),
+       url('~@/assets/fonts/CenturyGothic-BoldItalic.ttf') format('truetype'),
+       url('~@/assets/fonts/CenturyGothic-BoldItalic.woff') format('woff'),
+       url('~@/assets/fonts/CenturyGothic-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
