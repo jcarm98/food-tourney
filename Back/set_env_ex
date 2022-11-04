@@ -1,0 +1,23 @@
+#!/bin/bash
+
+export ASP_DATABASE_PASSWORD='databasepassword'
+export ASP_DATABASE_SERVER_IP='localhost'
+export ASP_DATABASE_NAME='databasename'
+export ASP_DATABASE_USER='databaseuser'
+export ASP_DATABASE_PORT='databaseport'
+export ASP_GOOGLE_MAPS_API_KEY='secretapikey'
+export ASP_ENV='dev'
+export ASP_HOST='foodtourney.app'
+export ASP_HOST_IP='serveripaddress'
+
+# local development host is
+# http://localhost:5001
+export VUE_ENV='dev'
+export VUE_HOST='https://foodtourney.app:5000'
+export VUE_GOOGLE_MAPS_API_KEY='secretapikey'
+
+# fnode react can only read environment variables that start with REACT_APP_ from
+# process.env eg process.env.REACT_APP_API_KEY
+# variables are read as strings always
+
+# make script that uses sed to replace placeholders in json files with correct data?
