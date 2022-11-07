@@ -15,6 +15,7 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using FoodTourneyBack.Controllers;
 using Microsoft.AspNetCore.HttpOverrides;
 using System.Net;
+using MySqlConnector.Authentication.Ed25519;
 
 namespace FoodTourneyBack
 {
@@ -33,6 +34,7 @@ namespace FoodTourneyBack
         {
             var pass = Environment.GetEnvironmentVariable("ASP_DATABASE_PASSWORD");
             // ASP_DATABASE_SERVER_IP
+	    Ed25519AuthenticationPlugin.Install();
             var connectionString = "Server="
                 + Environment.GetEnvironmentVariable("ASP_DATABASE_SERVER_IP")
                 + "; Port="

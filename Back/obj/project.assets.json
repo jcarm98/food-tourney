@@ -262,13 +262,25 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "MySqlConnector/1.3.13": {
+      "MySqlConnector/2.0.0": {
         "type": "package",
         "compile": {
-          "lib/net5.0/MySqlConnector.dll": {}
+          "lib/net6.0/MySqlConnector.dll": {}
         },
         "runtime": {
-          "lib/net5.0/MySqlConnector.dll": {}
+          "lib/net6.0/MySqlConnector.dll": {}
+        }
+      },
+      "MySqlConnector.Authentication.Ed25519/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "MySqlConnector": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MySqlConnector.Authentication.Ed25519.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MySqlConnector.Authentication.Ed25519.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -2107,10 +2119,10 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "MySqlConnector/1.3.13": {
-      "sha512": "o1qsijkFGvTslpuQdcJwG6IvdNOiVL7fRqvFZ0LTg04kfz+IzzwSWj4YwgTe0q0C3p0WqgaDXui5OEx6qgwebg==",
+    "MySqlConnector/2.0.0": {
+      "sha512": "EY0KXqQas+QvdZQU0NPkqBSfJitWAl8IUCg0v/Qn0P7f/KApJTFJFm8czYWoDPyewUjPHrAnE/cSYzzSFGc8Ng==",
       "type": "package",
-      "path": "mysqlconnector/1.3.13",
+      "path": "mysqlconnector/2.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2123,19 +2135,34 @@
         "lib/net471/MySqlConnector.xml",
         "lib/net5.0/MySqlConnector.dll",
         "lib/net5.0/MySqlConnector.xml",
-        "lib/netcoreapp2.1/MySqlConnector.dll",
-        "lib/netcoreapp2.1/MySqlConnector.xml",
+        "lib/net6.0/MySqlConnector.dll",
+        "lib/net6.0/MySqlConnector.xml",
         "lib/netcoreapp3.1/MySqlConnector.dll",
         "lib/netcoreapp3.1/MySqlConnector.xml",
-        "lib/netstandard1.3/MySqlConnector.dll",
-        "lib/netstandard1.3/MySqlConnector.xml",
         "lib/netstandard2.0/MySqlConnector.dll",
         "lib/netstandard2.0/MySqlConnector.xml",
         "lib/netstandard2.1/MySqlConnector.dll",
         "lib/netstandard2.1/MySqlConnector.xml",
         "logo.png",
-        "mysqlconnector.1.3.13.nupkg.sha512",
+        "mysqlconnector.2.0.0.nupkg.sha512",
         "mysqlconnector.nuspec"
+      ]
+    },
+    "MySqlConnector.Authentication.Ed25519/2.0.0": {
+      "sha512": "BWnYnaX1xP4QdtwOh/E2pqxjzqYxk/GaBTtpfOS4rFbgqH+c8ZcIbgZ9wRoGi/hywxtjGyQs77Re7QU29OCQzw==",
+      "type": "package",
+      "path": "mysqlconnector.authentication.ed25519/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net45/MySqlConnector.Authentication.Ed25519.dll",
+        "lib/net45/MySqlConnector.Authentication.Ed25519.xml",
+        "lib/netstandard2.0/MySqlConnector.Authentication.Ed25519.dll",
+        "lib/netstandard2.0/MySqlConnector.Authentication.Ed25519.xml",
+        "logo.png",
+        "mysqlconnector.authentication.ed25519.2.0.0.nupkg.sha512",
+        "mysqlconnector.authentication.ed25519.nuspec"
       ]
     },
     "NETStandard.Library/1.6.1": {
@@ -5964,23 +5991,24 @@
     "net6.0": [
       "Microsoft.AspNet.WebApi.Cors >= 5.2.9",
       "Microsoft.EntityFrameworkCore >= 5.0.17",
+      "MySqlConnector.Authentication.Ed25519 >= 2.0.0",
       "Pomelo.EntityFrameworkCore.MySql >= 5.0.4"
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {}
+    "/home/deploy/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/root/FoodTourney/FoodTourneyBack.csproj",
+      "projectUniqueName": "/home/deploy/ft/Back/FoodTourneyBack.csproj",
       "projectName": "FoodTourneyBack",
-      "projectPath": "/root/FoodTourney/FoodTourneyBack.csproj",
-      "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/root/FoodTourney/obj/",
+      "projectPath": "/home/deploy/ft/Back/FoodTourneyBack.csproj",
+      "packagesPath": "/home/deploy/.nuget/packages/",
+      "outputPath": "/home/deploy/ft/Back/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "/home/deploy/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -6011,6 +6039,10 @@
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.17, )"
+          },
+          "MySqlConnector.Authentication.Ed25519": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           },
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",

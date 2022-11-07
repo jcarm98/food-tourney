@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/root/FoodTourney/FoodTourneyBack.csproj": {}
+    "/home/deploy/ft/Back/FoodTourneyBack.csproj": {}
   },
   "projects": {
-    "/root/FoodTourney/FoodTourneyBack.csproj": {
+    "/home/deploy/ft/Back/FoodTourneyBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/root/FoodTourney/FoodTourneyBack.csproj",
+        "projectUniqueName": "/home/deploy/ft/Back/FoodTourneyBack.csproj",
         "projectName": "FoodTourneyBack",
-        "projectPath": "/root/FoodTourney/FoodTourneyBack.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/root/FoodTourney/obj/",
+        "projectPath": "/home/deploy/ft/Back/FoodTourneyBack.csproj",
+        "packagesPath": "/home/deploy/.nuget/packages/",
+        "outputPath": "/home/deploy/ft/Back/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/home/deploy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -45,6 +45,10 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.17, )"
+            },
+            "MySqlConnector.Authentication.Ed25519": {
+              "target": "Package",
+              "version": "[2.0.0, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
