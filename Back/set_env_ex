@@ -12,9 +12,10 @@ export ASP_HOST_IP='serveripaddress'
 
 # local development host is
 # http://localhost:5001
-export VUE_ENV='dev'
-export VUE_HOST='https://foodtourney.app:5000'
-export VUE_GOOGLE_MAPS_API_KEY='secretapikey'
+# vue 3 will only load variables starting with VUE_APP_
+export VUE_APP_ENV='dev'
+export VUE_APP_HOST='https://foodtourney.app:5000'
+export VUE_APP_GOOGLE_MAPS_API_KEY='secretapikey'
 
 # fnode react can only read environment variables that start with REACT_APP_ from
 # process.env eg process.env.REACT_APP_API_KEY
