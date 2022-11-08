@@ -44,7 +44,7 @@ export default defineComponent({
     name: "Start",
     data() {
         return {
-            apiKey: "secret_google_api_key",
+            apiKey: process.env.VUE_APP_GOOGLE_MAPS_API_KEY,
             address: "",
             infoWindow: (window as any).google.maps.InfoWindow,
             map: (window as any).google.maps,
@@ -183,8 +183,9 @@ export default defineComponent({
             infoWindow.open(this.map);
         },
         getPlaces(): void {
-            let url =
-                "https://foodtourney.app:5000/places/?lat=" +
+            //console.log(process.env.VUE_APP_HOST);
+		let url =
+                process.env.VUE_APP_HOST + "/places/?lat=" +
                 this.posLocal.lat +
                 "&lng=" +
                 this.posLocal.lng;
@@ -212,6 +213,7 @@ export default defineComponent({
                 this.posLocal.lng +
                 "&key=" +
                 this.apiKey;
+		//console.log(url, process.env.VUE_APP_GOOGLE_MAPS_API_KEY);
             this.request("GET", url, "", (response: string) => {
                 var res = JSON.parse(response).results;
                 var i;
@@ -233,7 +235,7 @@ export default defineComponent({
                 return;
             }
             let url =
-                "https://foodtourney.app:5000/popular?zip=" + this.zipLocal;
+                process.env.VUE_APP_HOST + "/popular?zip=" + this.zipLocal;
             this.request("GET", url, "", (response: string) => {
                 let popular = JSON.parse(response);
                 if (popular.placeId != -1) {
@@ -255,3 +257,4 @@ export default defineComponent({
     },
 });
 </script>
+

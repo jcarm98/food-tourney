@@ -193,7 +193,7 @@ export default defineComponent({
                 this.updateState("result");
                 this.request(
                     "POST",
-                    "https://foodtourney.app:5000/tally/" + this.zip,
+                    process.env.VUE_APP_HOST + "/tally/" + this.zip,
                     JSON.stringify(this.finalLocal),
                     (response: string) => {
                         console.log(response);
