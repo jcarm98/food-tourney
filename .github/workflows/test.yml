@@ -28,7 +28,7 @@ jobs:
     # remove old directory
     # copy from random string directory to removed directory
     # - run: echo "rm -rf /var/www/hobbyshare && cd ~/$(cat name.txt)/Front/dist && ls >> 0frontdir.txt && cp -r ~/$(cat name.txt)/Front/dist/$(sed -n 2p 0frontdir.txt) /var/www/hobbyshare && rm -rf 0frontdir.txt" | ssh -o StrictHostKeyChecking=no -i private_key deploy@${{secrets.SERVER_IP}}
-      - run: echo "rm -rf /var/www/foodtourney-test && cp -r ~/$(cat name.txt)/Front/dist /var/www/foodtourney-test" | ssh -o StrictHostKeyChecking=no -i private_key deploy@${{secrets.SERVER_IP}}
+      - run: echo "rm -rf /var/www/FoodTourney-test && cp -r ~/$(cat name.txt)/Front/dist /var/www/FoodTourney-test" | ssh -o StrictHostKeyChecking=no -i private_key deploy@${{secrets.SERVER_IP}}
     # remove old backend and replace with new backend
       - run: echo "rm -rf ~/foodtourney && cp -r ~/$(cat name.txt)/Back ~/foodtourney && cd ~/foodtourney && dotnet build --configuration Release && . ~/run_server" | ssh -o StrictHostKeyChecking=no -i private_key deploy@${{secrets.SERVER_IP}}
     # remove old nginx config
