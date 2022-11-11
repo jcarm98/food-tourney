@@ -8,6 +8,8 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Text.RegularExpressions;
 using System.Dynamic;
+using System.Web.Http.Cors;
+using System;
 
 namespace FoodTourneyBack.Controllers
 {
@@ -30,7 +32,8 @@ namespace FoodTourneyBack.Controllers
 			const int defaultAmount = 25;
 			var wc = new WebClient();
 
-			string apiKey = "secret_google_api_key";
+			// ASP_GOOGLE_MAPS_API_KEY
+			string apiKey = Environment.GetEnvironmentVariable("ASP_GOOGLE_MAPS_API_KEY");
 			string URI = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
 			+ lat
 			+ ","

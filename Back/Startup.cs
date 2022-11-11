@@ -15,6 +15,7 @@ using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using FoodTourneyBack.Controllers;
 using Microsoft.AspNetCore.HttpOverrides;
 using System.Net;
+using MySqlConnector.Authentication.Ed25519;
 
 namespace FoodTourneyBack
 {
@@ -31,8 +32,18 @@ namespace FoodTourneyBack
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var pass = "secret_database_password";
-            var connectionString = "Server=localhost; Port=3306; Database=food; Uid=remote; Pwd="
+            var pass = Environment.GetEnvironmentVariable("ASP_DATABASE_PASSWORD");
+            // ASP_DATABASE_SERVER_IP
+	    Ed25519AuthenticationPlugin.Install();
+            var connectionString = "Server="
+                + Environment.GetEnvironmentVariable("ASP_DATABASE_SERVER_IP")
+                + "; Port="
+                + Environment.GetEnvironmentVariable("ASP_DATABASE_PORT")
+                + "; Database="
+                + Environment.GetEnvironmentVariable("ASP_DATABASE_NAME")
+                + "; Uid="
+                + Environment.GetEnvironmentVariable("ASP_DATABASE_USER")
+                + "; Pwd="
                 + pass
                 + ";";
             services.AddControllers();
@@ -48,7 +59,7 @@ namespace FoodTourneyBack
                 options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
                 options.KnownNetworks.Clear();
                 options.KnownProxies.Clear();
-                options.KnownProxies.Add(IPAddress.Parse("ip_address"));
+                options.KnownProxies.Add(IPAddress.Parse(Environment.GetEnvironmentVariable("ASP_HOST_IP")));
                 options.KnownProxies.Add(IPAddress.Parse("127.0.1.1"));
             });
             services.AddCors(options =>
@@ -56,7 +67,8 @@ namespace FoodTourneyBack
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                     builder =>
                     {
-                        builder.WithOrigins("https://foodtourney.app");
+                        builder.WithOrigins("https://" + Environment.GetEnvironmentVariable("ASP_HOST"));
+                        builder.WithOrigins("http://localhost:8080");
                         //.AllowAnyHeader().AllowAnyMethod();
                     });
             });
