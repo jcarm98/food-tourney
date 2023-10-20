@@ -142,7 +142,8 @@ export default defineComponent({
         },
         updateList(isFirst: boolean): void {
 		console.log("why are there two lists???", this.places1, this.places2); 
-           // Delete the entry not clicked
+           	console.log("what are these?", this.option1, this.option2);
+	   // Delete the entry not clicked
             // Store clicked entry
             if (isFirst) {
                 delete this.places1[this.option2];
