@@ -196,7 +196,7 @@ export default defineComponent({
                     process.env.VUE_APP_HOST + "/tally/" + this.zip,
                     JSON.stringify(this.finalLocal),
                     (response: string) => {
-                        console.log(response);
+                        //console.log(response);
                     }
                 );
                 return;
