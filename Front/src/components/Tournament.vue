@@ -146,12 +146,14 @@ export default defineComponent({
 	   // Delete the entry not clicked
             // Store clicked entry
             if (isFirst) {
+		console.log("first?", isFirst, this.option2);
                 delete this.places1[this.option2];
                 this.places2[this.option1] = JSON.parse(
                     JSON.stringify(this.places1[this.option1])
                 );
                 delete this.places1[this.option1];
             } else {
+		console.log("first?", isFirst, this.option1);
                 delete this.places1[this.option1];
                 this.places2[this.option2] = JSON.parse(
                     JSON.stringify(this.places1[this.option2])
