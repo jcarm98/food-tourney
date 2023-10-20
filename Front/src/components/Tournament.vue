@@ -12,13 +12,13 @@
             <OptionButton
                 :label="places1[option1].Name"
                 :clickEvent="updateList"
-                v-bind:first="true"
+                :first="true"
             ></OptionButton>
             <div class="super-center">or</div>
             <OptionButton
                 :label="places1[option2].Name"
                 :clickEvent="updateList"
-                v-bind:first="false"
+                :first="false"
             ></OptionButton>
 
             <OptionAddress :address="places1[option1].Vicinity"></OptionAddress>
@@ -141,23 +141,15 @@ export default defineComponent({
             this.option2 = keys[num2];
         },
         updateList(isFirst: boolean): void {
-		console.log("why are there two lists???", this.places1, this.places2); 
-           	console.log("what are these?", this.option1, this.option2);
 	   // Delete the entry not clicked
             // Store clicked entry
             if (isFirst) {
-		console.log("1");
-		console.log("first?", isFirst, this.option2);
-                console.log(this.option1, this.option2);
 		delete this.places1[this.option2];
                 this.places2[this.option1] = JSON.parse(
                     JSON.stringify(this.places1[this.option1])
                 );
                 delete this.places1[this.option1];
             } else {
-		console.log("2");
-		console.log("first?", isFirst, this.option1);
-		console.log(this.option1, this.option2);
                 delete this.places1[this.option1];
                 this.places2[this.option2] = JSON.parse(
                     JSON.stringify(this.places1[this.option2])
