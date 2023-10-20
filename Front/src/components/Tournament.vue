@@ -12,13 +12,13 @@
             <OptionButton
                 :label="places1[option1].Name"
                 :clickEvent="updateList"
-                first="true"
+                v-bind:first="true"
             ></OptionButton>
             <div class="super-center">or</div>
             <OptionButton
                 :label="places1[option2].Name"
                 :clickEvent="updateList"
-                first="false"
+                v-bind:first="false"
             ></OptionButton>
 
             <OptionAddress :address="places1[option1].Vicinity"></OptionAddress>
